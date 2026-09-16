@@ -1,0 +1,674 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Nuvia — Health & Wellbeing</title>
+
+    <link rel="stylesheet" href="css/style.css">
+    <script src="js/script.js" defer></script>
+</head>
+
+<body>
+
+    <!-- Navigation -->
+    <header class="navbar">
+        <div class="nav-container">
+            <a href="#" class="logo">Nuvia</a>
+
+            <nav class="nav-links">
+                <a href="#wellness">Wellness</a>
+                <a href="#habits">Habits</a>
+                <a href="#tracker">Tracker</a>
+            </nav>
+
+            <button class="nav-button" onclick="scrollToTracker()">
+                Start Today
+            </button>
+        </div>
+    </header>
+
+
+    <!-- Hero -->
+    <main>
+
+        <section class="hero">
+            <div class="hero-container">
+
+                <div class="hero-content">
+                    <span class="eyebrow">YOUR EVERYDAY WELLBEING</span>
+
+                    <h1>
+                        Feel better.<br>
+                        <span>Live well.</span>
+                    </h1>
+
+                    <p>
+                        Small habits can make a big difference.
+                        Track your daily wellbeing, build healthier
+                        routines, and keep your progress moving forward.
+                    </p>
+
+                    <button class="primary-button" onclick="scrollToTracker()">
+                        Check in today
+                    </button>
+                </div>
+
+
+                <!-- Wellness Score Card -->
+                <div class="wellness-card">
+
+                    <div class="card-top">
+                        <div>
+                            <span class="card-label">TODAY'S WELLNESS</span>
+                            <h2 id="score">0%</h2>
+                        </div>
+
+                        <div class="wellness-icon">
+                            🌱
+                        </div>
+                    </div>
+
+                    <div class="progress-container">
+                        <div class="progress-bar">
+                            <div
+                                class="progress-fill"
+                                id="mainProgress">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="score-message" id="scoreMessage">
+                        Let's get started!
+                    </div>
+
+
+                    <!-- Daily Stats -->
+                    <div class="stats-grid">
+
+                        <div class="stat">
+                            <span class="stat-icon">😴</span>
+                            <strong id="sleepDisplay">0h</strong>
+                            <small>Sleep</small>
+                        </div>
+
+                        <div class="stat">
+                            <span class="stat-icon">👟</span>
+                            <strong id="stepsDisplay">0</strong>
+                            <small>Steps</small>
+                        </div>
+
+                        <div class="stat">
+                            <span class="stat-icon">💧</span>
+                            <strong id="waterDisplay">0 / 8</strong>
+                            <small>Glasses</small>
+                        </div>
+
+                    </div>
+
+
+                    <!-- Streak -->
+                    <div class="hero-streak">
+                        <span>🔥</span>
+
+                        <div>
+                            <strong>
+                                <span id="heroStreak">0</span> day streak
+                            </strong>
+
+                            <small id="heroStreakMessage">
+                                Complete today's routine to build your streak.
+                            </small>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+        </section>
+
+
+        <!-- Wellness Categories -->
+        <section class="section" id="wellness">
+
+            <div class="section-heading">
+                <span class="eyebrow">WELLNESS</span>
+
+                <h2>
+                    Take care of<br>
+                    <span>every part of you.</span>
+                </h2>
+
+                <p>
+                    Wellbeing isn't just about exercise.
+                    It's about creating balance in your everyday life.
+                </p>
+            </div>
+
+
+            <div class="wellness-grid">
+
+                <article class="wellness-item">
+                    <div class="category-icon">🥗</div>
+                    <h3>Nutrition</h3>
+                    <p>
+                        Give your body the fuel it needs with
+                        balanced, nutritious meals.
+                    </p>
+                </article>
+
+
+                <article class="wellness-item">
+                    <div class="category-icon">🏃</div>
+                    <h3>Movement</h3>
+                    <p>
+                        Stay active throughout the day and
+                        find movement that feels good.
+                    </p>
+                </article>
+
+
+                <article class="wellness-item">
+                    <div class="category-icon">🧠</div>
+                    <h3>Mental wellbeing</h3>
+                    <p>
+                        Make time to relax, reset and look
+                        after your mental wellbeing.
+                    </p>
+                </article>
+
+
+                <article class="wellness-item">
+                    <div class="category-icon">😴</div>
+                    <h3>Sleep</h3>
+                    <p>
+                        Quality sleep helps your body recover
+                        and keeps you feeling refreshed.
+                    </p>
+                </article>
+
+
+                <article class="wellness-item">
+                    <div class="category-icon">💧</div>
+                    <h3>Hydration</h3>
+                    <p>
+                        Keep your body hydrated throughout
+                        the day with regular water intake.
+                    </p>
+                </article>
+
+
+                <article class="wellness-item">
+                    <div class="category-icon">🌱</div>
+                    <h3>Healthy routines</h3>
+                    <p>
+                        Consistent small habits can turn into
+                        meaningful long-term changes.
+                    </p>
+                </article>
+
+            </div>
+
+        </section>
+
+
+        <!-- Habits -->
+        <section class="habits-section" id="habits">
+
+            <div class="section-heading centered">
+                <span class="eyebrow">DAILY HABITS</span>
+
+                <h2>
+                    Small actions.<br>
+                    <span>Big difference.</span>
+                </h2>
+            </div>
+
+
+            <div class="habits-grid">
+
+                <div class="habit-card">
+                    <span>01</span>
+                    <h3>Start your morning right</h3>
+                    <p>
+                        Drink some water, stretch and give
+                        yourself a moment before starting your day.
+                    </p>
+                </div>
+
+
+                <div class="habit-card">
+                    <span>02</span>
+                    <h3>Move throughout the day</h3>
+                    <p>
+                        Take short walks, stretch between tasks,
+                        or find an activity you enjoy.
+                    </p>
+                </div>
+
+
+                <div class="habit-card">
+                    <span>03</span>
+                    <h3>Give yourself a break</h3>
+                    <p>
+                        Step away from your screen and give
+                        your mind some time to reset.
+                    </p>
+                </div>
+
+
+                <div class="habit-card">
+                    <span>04</span>
+                    <h3>Protect your sleep</h3>
+                    <p>
+                        Create a relaxing nighttime routine and
+                        give yourself enough time to rest.
+                    </p>
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- Tracker -->
+        <section class="tracker-section" id="tracker">
+
+            <div class="tracker-container">
+
+                <div class="tracker-header">
+
+                    <div>
+                        <span class="eyebrow">TODAY</span>
+
+                        <h2>Your daily wellbeing check-in</h2>
+
+                        <p>
+                            Update your results and complete your
+                            routine. Your wellness score updates automatically.
+                        </p>
+                    </div>
+
+
+                    <!-- Streak Card -->
+                    <div class="streak-card">
+
+                        <div class="streak-fire">
+                            🔥
+                        </div>
+
+                        <div>
+                            <span>Current streak</span>
+
+                            <strong>
+                                <span id="streakCount">0</span> days
+                            </strong>
+
+                            <small id="streakMessage">
+                                Complete all 4 goals today.
+                            </small>
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <!-- Daily Results -->
+                <div class="results-card">
+
+                    <div class="results-heading">
+                        <div>
+                            <h3>Your daily results</h3>
+
+                            <p>
+                                Enter your results below.
+                                Nuvia will calculate your wellness score.
+                            </p>
+                        </div>
+
+                        <span class="saved-badge">
+                            ✓ Saved automatically
+                        </span>
+                    </div>
+
+
+                    <div class="input-grid">
+
+                        <!-- Sleep -->
+                        <div class="input-card">
+
+                            <div class="input-icon">
+                                😴
+                            </div>
+
+                            <div class="input-info">
+                                <label for="sleepInput">
+                                    Sleep
+                                </label>
+
+                                <span>
+                                    Target: 8 hours
+                                </span>
+                            </div>
+
+                            <div class="input-wrapper">
+                                <input
+                                    type="number"
+                                    id="sleepInput"
+                                    min="0"
+                                    max="24"
+                                    step="0.25"
+                                    value="9"
+                                >
+
+                                <span>hrs</span>
+                            </div>
+
+                        </div>
+
+
+                        <!-- Steps -->
+                        <div class="input-card">
+
+                            <div class="input-icon">
+                                👟
+                            </div>
+
+                            <div class="input-info">
+                                <label for="stepsInput">
+                                    Steps
+                                </label>
+
+                                <span>
+                                    Target: 8,000
+                                </span>
+                            </div>
+
+                            <div class="input-wrapper">
+                                <input
+                                    type="number"
+                                    id="stepsInput"
+                                    min="0"
+                                    max="100000"
+                                    step="100"
+                                    value="14000"
+                                >
+
+                                <span>steps</span>
+                            </div>
+
+                        </div>
+
+
+                        <!-- Water -->
+                        <div class="input-card">
+
+                            <div class="input-icon">
+                                💧
+                            </div>
+
+                            <div class="input-info">
+                                <label for="waterInput">
+                                    Water
+                                </label>
+
+                                <span>
+                                    Target: 8 glasses
+                                </span>
+                            </div>
+
+                            <div class="input-wrapper">
+                                <input
+                                    type="number"
+                                    id="waterInput"
+                                    min="0"
+                                    max="30"
+                                    step="1"
+                                    value="5"
+                                >
+
+                                <span>glasses</span>
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <!-- Daily Routine -->
+                <div class="goals-card">
+
+                    <div class="goals-heading">
+
+                        <div>
+                            <h3>Today's routine</h3>
+
+                            <p>
+                                Complete all four goals to continue your streak.
+                            </p>
+                        </div>
+
+                        <div class="completion-count">
+                            <strong id="completedCount">0</strong>
+                            <span>/ 4</span>
+                        </div>
+
+                    </div>
+
+
+                    <div class="goals-list">
+
+                        <label class="goal">
+
+                            <input
+                                type="checkbox"
+                                data-goal="0"
+                            >
+
+                            <span class="custom-checkbox">✓</span>
+
+                            <div>
+                                <strong>Drink enough water</strong>
+                                <small>Stay hydrated throughout the day 💧</small>
+                            </div>
+
+                        </label>
+
+
+                        <label class="goal">
+
+                            <input
+                                type="checkbox"
+                                data-goal="1"
+                            >
+
+                            <span class="custom-checkbox">✓</span>
+
+                            <div>
+                                <strong>Get some movement</strong>
+                                <small>Walk, exercise or stretch 🏃</small>
+                            </div>
+
+                        </label>
+
+
+                        <label class="goal">
+
+                            <input
+                                type="checkbox"
+                                data-goal="2"
+                            >
+
+                            <span class="custom-checkbox">✓</span>
+
+                            <div>
+                                <strong>Eat a balanced meal</strong>
+                                <small>Give your body good fuel 🥗</small>
+                            </div>
+
+                        </label>
+
+
+                        <label class="goal">
+
+                            <input
+                                type="checkbox"
+                                data-goal="3"
+                            >
+
+                            <span class="custom-checkbox">✓</span>
+
+                            <div>
+                                <strong>Take time to unwind</strong>
+                                <small>Give your mind time to relax 🧘</small>
+                            </div>
+
+                        </label>
+
+                    </div>
+
+
+                    <!-- Routine Progress -->
+                    <div class="routine-progress">
+
+                        <div class="routine-progress-top">
+                            <span>Daily routine</span>
+                            <strong id="routinePercentage">0%</strong>
+                        </div>
+
+                        <div class="routine-progress-bar">
+                            <div
+                                id="routineProgress"
+                                class="routine-progress-fill">
+                            </div>
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <!-- Best Streak -->
+                <div class="best-streak">
+
+                    <span class="trophy">🏆</span>
+
+                    <div>
+                        <small>Best streak</small>
+
+                        <strong>
+                            <span id="bestStreak">0</span> days
+                        </strong>
+                    </div>
+
+                    <div class="best-streak-message">
+                        Keep showing up. Every day counts.
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- Quote -->
+        <section class="quote-section">
+
+            <div class="quote-container">
+
+                <span class="quote-mark">“</span>
+
+                <blockquote>
+                    Take care of your body.
+                    It's the only place you have to live.
+                </blockquote>
+
+                <span class="quote-author">
+                    — Jim Rohn
+                </span>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- Footer -->
+    <footer>
+
+        <div class="footer-container">
+
+            <div>
+                <a href="#" class="logo">Nuvia</a>
+
+                <p>
+                    Helping you build healthier,
+                    happier everyday habits.
+                </p>
+            </div>
+
+            <div class="footer-links">
+                <a href="#wellness">Wellness</a>
+                <a href="#habits">Habits</a>
+                <a href="#tracker">Tracker</a>
+            </div>
+
+        </div>
+
+        <div class="footer-bottom">
+            © 2026 Nuvia. Take care of yourself.
+        </div>
+
+    </footer>
+
+
+    <!-- Motivation Popup -->
+    <div
+        class="motivation-overlay"
+        id="motivationOverlay"
+    >
+
+        <div class="motivation-modal">
+
+            <button
+                class="modal-close"
+                id="modalClose"
+                aria-label="Close"
+            >
+                ×
+            </button>
+
+            <div
+                class="motivation-icon"
+                id="motivationIcon"
+            >
+                🌱
+            </div>
+
+            <h2 id="motivationTitle">
+                Great start!
+            </h2>
+
+            <p id="motivationMessage">
+                Keep going!
+            </p>
+
+            <button
+                class="modal-button"
+                id="modalButton"
+            >
+                Keep going
+            </button>
+
+        </div>
+
+    </div>
+
+</body>
+</html>
